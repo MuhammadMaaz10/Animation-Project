@@ -1,0 +1,33 @@
+import 'package:animation_project/Home_Screen/Home_View.dart';
+import 'package:animation_project/Spinner_Screen/Spinner_View.dart';
+import 'package:animation_project/Splash_Screen/Splash_Screen2.dart';
+import 'package:animation_project/Splash_Screen/Splash_View.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+void main() =>  runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context , child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'First Method',
+          // You can use the library anywhere in the app even in theme
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+          ),
+          home: Splash_Screen2(),
+        );
+      },
+    );
+  }
+}
